@@ -97,6 +97,6 @@ public:
 	}
 
 private:
-	MyClass m1_;
+	MyClass m1_; // c'est pour ca que MyClass est construit avant MyOtherNiceClass
 };
 

@@ -63,7 +63,7 @@ private:
 
 class TravelClock : public Clock {
 public:
-	TravelClock(bool useMilitary, const string& location, int timeDiff)
+	TravelClock(bool useMilitary, const string& location, const int& timeDiff)
 		: Clock(useMilitary),
 		location_(location),
 		timeDiff_(timeDiff) { }

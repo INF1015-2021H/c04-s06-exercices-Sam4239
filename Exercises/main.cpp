@@ -39,8 +39,12 @@ void runClockExample() {
 		cout << *c << "\n";
 	cout << "\n";
 
-	//auto& c2tc = dynamic_cast<TravelClock&>(*clocks[0]);
-	//cout << c2tc.getTimeDiff() << "\n";
+	TravelClock* c2tc = dynamic_cast<TravelClock*>(clocks[1]);
+	auto& c3tc = dynamic_cast<TravelClock&>(*clocks[1]);
+
+	cout << c3tc.getTimeDiff() << endl;
+
+	cout << c2tc->getTimeDiff() << "\n";
 
 	unique_ptr<Clock> c4 = make_unique<TravelClock>(true, "Dreamland", +4);
 
@@ -51,6 +55,7 @@ void runClockExample() {
 
 	auto c5 = make_unique<UberSuperDuperTravelClock>(true, "henlo", +10);
 	Clock& c5c = *c5;
+	cout << c5c << " big, il fait beau" << endl;
 	// On peut faire un dynamic_cast vers une classe intermédiaire dans l'arbre d'héritage (pas obliger de convertir jusqu'à la classe la plus dérivée.
 	auto& c5tc = dynamic_cast<TravelClock&>(c5c);
 
